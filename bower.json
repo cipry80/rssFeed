@@ -1,0 +1,14 @@
+{
+  "name": "teste-online",
+  "description": "teste",
+  "main": "index.js",
+  "authors": [
+    "DCC Development"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
