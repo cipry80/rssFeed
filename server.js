@@ -13,12 +13,11 @@ var server;
 /**
  * Set express (app) variables
  */
- const  ROOT = app.get('root');
 
 app.set('config', config);
 app.set('root', __dirname);
 app.set('env', ENV);
-app.set('views', ROOT + '/app/public/views');
+app.use('/static', express.static(__dirname + '/public'));
 //require('./config/mongoose').init(app);
 require('./config/models').init(app);
 //require('./config/passport').init(app);
