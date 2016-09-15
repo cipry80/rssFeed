@@ -12,4 +12,3 @@
 ##Start app
 *  open terminal or git bash
 * in another terminal use the command - npm start or nodemon server
-# rssFeed
