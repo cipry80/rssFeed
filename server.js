@@ -17,7 +17,7 @@ var server;
 app.set('config', config);
 app.set('root', __dirname);
 app.set('env', ENV);
-app.use('/static', express.static(__dirname + '/public'));
+
 //require('./config/mongoose').init(app);
 require('./config/models').init(app);
 //require('./config/passport').init(app);
@@ -27,6 +27,8 @@ require('./config/routes').init(app);
 app.get('/api/status', (req, res, next) => {
   res.json({ message: 'API is running.' });
 });
+
+app.use('/static', express.static(__dirname + '/public'));
 
 app.use((err, req, res, next) => {
   logger.error(err);
