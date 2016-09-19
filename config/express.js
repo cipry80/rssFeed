@@ -4,6 +4,8 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const expressValidator = require('express-validator');
+const serveStatic = require('serve-static');
+const nunjucks  = require('nunjucks');
 //const session = require('express-session');
 //const MongoStore = require('connect-mongo')(session);
 const morgan = require('morgan');
@@ -15,15 +17,28 @@ module.exports.init = initExpress;
 
 function initExpress(app) {
   logger.debug('Initializing %s configs', 'Express');
-
+  const ROOT = app.get('root');
   let env = app.get('env');
-  let root = app.get('root');
   let sessionOpts = {
     secret: config.session.secret,
     key: 'skey.sid',
     resave: config.session.resave,
     saveUninitialized: config.session.saveUninitialized
   };
+
+  /**
+   * Configure view engine
+   */
+nunjucks.configure('views', {
+    autoescape: true,
+    cache: false,
+    express: app
+});
+
+// Set Nunjucks as rendering engine for pages with .html suffix
+app.engine( 'html', nunjucks.render ) ;
+app.set('views', ROOT + '/app/views');
+ app.set('view engine', 'html');
 
   if (config.proxy.trust) {
     app.enable('trust proxy');
@@ -45,6 +60,10 @@ function initExpress(app) {
   // app.use(session(sessionOpts));
   //app.use(passport.initialize());
   //app.use(passport.session());
+  if (env === 'development' || config.serveStatic) {
+      console.log(ROOT);
+      app.use(serveStatic(ROOT + '/public'));
+    }
 
   app.use(function(req, res, next) {
     // a simple object that holds resources for each request

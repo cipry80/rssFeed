@@ -15,7 +15,6 @@ module.exports.news = news;
 function news(callback) {
     feed(rss, function(err, articles) {
     if (err) throw err;
-    // articles is an array of article with properties described above.
     callback(articles);
-});
+    });
 }

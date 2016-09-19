@@ -1,5 +1,5 @@
 {
-  "name": "rest-apiSdl",
+  "name": "ClujNews",
   "version": "1.0.0",
   "description": "News",
   "main": "server.js",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/cipry80/rssFeed"
   },
   "author": "",
   "license": "ISC",
@@ -45,13 +45,12 @@
     "express-session": "^1.14.0",
     "express-validator": "^2.18.0",
     "feed-read-parser": "0.0.6",
-    "feedparser": "^1.1.4",
-    "google": "^2.1.0",
-    "krawler": "^0.3.3",
     "lodash": "^4.14.0",
     "method-override": "^2.3.5",
     "morgan": "^1.6.1",
+    "nunjucks": "^2.5.2",
     "request": "^2.74.0",
+    "serve-static": "^1.11.1",
     "winston": "^2.1.1"
   }
 }

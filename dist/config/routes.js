@@ -10,5 +10,4 @@ function initRoutes(app) {
   let routesPath = app.get('root') + '/app/routes';
 
   app.use('/api/', require(routesPath + '/news'));
-   app.use('/api/', require(routesPath + '/home'));
 }
