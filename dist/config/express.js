@@ -29,7 +29,7 @@ function initExpress(app) {
   /**
    * Configure view engine
    */
-nunjucks.configure('views', {
+nunjucks.configure('dist/public/views', {
     autoescape: true,
     cache: false,
     express: app
@@ -37,7 +37,7 @@ nunjucks.configure('views', {
 
 // Set Nunjucks as rendering engine for pages with .html suffix
 app.engine( 'html', nunjucks.render ) ;
-app.set('views', ROOT + '/app/views');
+app.set('views', ROOT + 'dist/app/views');
  app.set('view engine', 'html');
 
   if (config.proxy.trust) {

@@ -1,28 +1,15 @@
-// 'use strict';
-// const servicesNews = require('../services/news');
-//
-// module.exports.newsApi = newsApi;
-//
-// function newsApi(req, res, next) {
-//     servicesNews.news( (data) => {
-//         res.status(200).json(data);
-//     });
-// }
 
 'use strict';
-//const servicesNews = require('../services/news');
+const servicesNews = require('../services/news');
 
 module.exports.newsApi = newsApi;
 
 function newsApi(req, res, next) {
-    //servicesNews.news( (data) => {
+    servicesNews.news( (data) => {
+        //res.status(200).json(data);
         res.render('home', {
             title: "Nunjucks",
-            data: 'data'
-        //res.status(200).json(data);
-        // res.render('home.html', {
-        //     title: "Nunjucks",
-        //     data: 'data'
-        //});
+            data: data
+        });
     });
 }
