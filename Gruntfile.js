@@ -27,7 +27,7 @@ module.exports = function (grunt) {
                 'app/**',
                 'config/**',
                 'public/**',
-                //'!public/css/*.css',
+                '!public/css/*.css',
                 '!public/less/**',
                 '!public/js/**',
                 'package.json',
@@ -51,7 +51,7 @@ module.exports = function (grunt) {
                 expand: true,
                 cwd: 'public/css/',
                 src: ['*.css',],
-                dest: 'dist/css',
+                dest: 'dist/public/css',
                 ext: '.min.css'
             }]
         }
