@@ -1,6 +1,6 @@
 {
-  "name": "teste-online",
-  "description": "teste",
+  "name": "news",
+  "description": "Cluj News",
   "main": "index.js",
   "authors": [
     "DCC Development"
