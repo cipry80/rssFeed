@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="{{ baseUrl }}/lib/bootstrap/dist/css/bootstrap.min.css">
+
+</head>
+<body>
+    <div class="container">
+        <!-- Main Content -->
+        <div class="result">
+            <h1>Posts</h1>
+            {% for item in results %}
+            <div class="media">
+                <div class="media-body">
+                    <h4 class="media-heading">{{ item.title }}</h4>
+                    <span class="content">
+                        {{ item.content }}
+                    </span>
+                    <a href="{{ item.link }}" target="_blank">Read more .....</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <!-- end of Container -->
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="{{ baseUrl }}/lib/jquery/dist/jquery.min.js"></script>
+    <script src="{{ baseUrl }}/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="{{ baseUrl }}/js/news.js"></script>
+</body>
+</html>

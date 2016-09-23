@@ -29,7 +29,7 @@ function initExpress(app) {
   /**
    * Configure view engine
    */
-nunjucks.configure('dist/public/views', {
+nunjucks.configure('dist/app/views', {
     autoescape: true,
     cache: false,
     express: app
@@ -37,7 +37,7 @@ nunjucks.configure('dist/public/views', {
 
 // Set Nunjucks as rendering engine for pages with .html suffix
 app.engine( 'html', nunjucks.render ) ;
-app.set('views', ROOT + 'dist/app/views');
+app.set('views', ROOT + '/app/views');
  app.set('view engine', 'html');
 
   if (config.proxy.trust) {
@@ -61,14 +61,11 @@ app.set('views', ROOT + 'dist/app/views');
   //app.use(passport.initialize());
   //app.use(passport.session());
   if (env === 'development' || config.serveStatic) {
-      console.log(ROOT);
-      app.use(serveStatic(ROOT + '/public'));
+      app.use(serveStatic(path.join(ROOT, 'public')));
     }
-
   app.use(function(req, res, next) {
     // a simple object that holds resources for each request
     req.resources = req.resources || {};
-
     next();
   });
 }

@@ -19,8 +19,5 @@ module.exports = {
   },
   proxy: {
     trust: true
-  },
-  swig: {
-    cache: false
-  },
+  }
 };
