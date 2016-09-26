@@ -19,10 +19,12 @@ function newsApi(req, res, next) {
         results = results.map(function(feed) {
             let title = striptags(feed.title);
             let content = striptags(feed.content);
-            let shortContent = ellipsis(content, 100);
+            // if (content.length > 50) {
+            //     content= ellipsis(content, 150);
+            // }
             return {
                 title: title,
-                content: shortContent,
+                content: content,
                 link: feed.link
             };
         });
