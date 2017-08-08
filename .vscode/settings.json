@@ -12,6 +12,7 @@
     "coverage": "explorerExcludedFiles",
     ".grunt": "explorerExcludedFiles",
     ".lock-wscript": "explorerExcludedFiles",
-    "node_modules": "explorerExcludedFiles"
+    "node_modules": "explorerExcludedFiles",
+    ".vscode": "explorerExcludedFiles"
   }
 }
