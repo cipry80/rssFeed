@@ -1,0 +1,17 @@
+{
+  "files.exclude": {
+    "npm-debug.log": "explorerExcludedFiles",
+    "bowerrc": "explorerExcludedFiles",
+    "bower_components": "explorerExcludedFiles",
+    "logs": "explorerExcludedFiles",
+    "*.log": "explorerExcludedFiles",
+    "pids": "explorerExcludedFiles",
+    "*.pid": "explorerExcludedFiles",
+    "*.seed": "explorerExcludedFiles",
+    "lib-cov": "explorerExcludedFiles",
+    "coverage": "explorerExcludedFiles",
+    ".grunt": "explorerExcludedFiles",
+    ".lock-wscript": "explorerExcludedFiles",
+    "node_modules": "explorerExcludedFiles"
+  }
+}

@@ -26,19 +26,18 @@ require('./config/routes').init(app);
 
 app.get('/api/status', (req, res, next) => {
   res.json({ message: 'API is running.' });
-});
+})
 
 app.use((err, req, res, next) => {
   logger.error(err);
   res.status(500).json(err);
-});
-
+})
 /**
  * Start the app if not loaded by another module
  */
 if (!module.parent) {
   server = http.createServer(app);
-  server.listen(config.port || 3000, config.hostname, () => {
+  server.listen(config.port || 3002, config.hostname, () => {
     let addr = server.address();
     logger.info('Server is running', {
       app: config.app.name,

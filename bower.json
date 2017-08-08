@@ -1,14 +1,14 @@
 {
-  "name": "news",
-  "description": "Cluj News",
-  "main": "index.js",
-  "authors": [
-    "DCC Development"
-  ],
-  "license": "ISC",
-  "homepage": "",
-  "private": true,
-  "dependencies": {
-    "bootstrap": "^3.3.7"
-  }
+    "name": "news",
+    "description": "Cluj News",
+    "main": "index.js",
+    "authors": [
+        "ACM Development"
+    ],
+    "license": "ISC",
+    "homepage": "",
+    "private": true,
+    "dependencies": {
+        "bootstrap": "^3.3.7"
+    }
 }
